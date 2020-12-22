@@ -1,2 +1,2 @@
 # bonusTask11
-Stage machine &amp; formal languages theory bonus task.
+State machines &amp; formal languages theory bonus task.
