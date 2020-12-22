@@ -2,7 +2,7 @@
 # символы и выводит текст с описанием новой грамматики. Грамматику описывать как в предыдущем задании.
 import re
 
-file = open("grammar2.txt", "r")
+file = open("grammar2.txt", "r") 
 grammarData = file.readline()
 file.close()
 #print(grammarData)
@@ -13,7 +13,7 @@ grammarRules = grammarData.split(" ")
 for rule in grammarRules:
     print(rule)
 
-yi = []
+yi = [] #создаём множество достижимых символов
 nonterminalSybmols = []
 for rule in grammarRules:
     nonterminalSybmols.append(rule[0])
@@ -38,8 +38,8 @@ reachableSymbols = yi[-2]
 
 #print(reachableSymbols)
 
-newNonterminals = set(nonterminalSybmols).intersection(set(reachableSymbols))
-newGrammarRules = []
+newNonterminals = set(nonterminalSybmols).intersection(set(reachableSymbols)) #объединяем достижиме и нетерминалы - узнаём, какие нетерминалы достижимы
+newGrammarRules = [] #создаём список новых правил
 for symbol in newNonterminals:
     for rule in grammarRules:
         if rule.startswith(symbol):
